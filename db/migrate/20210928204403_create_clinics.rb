@@ -4,9 +4,9 @@ class CreateClinics < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :address
       t.string :city
-      t.string :state
       t.string :zip_code
       t.string :phone_number
+      t.belongs_to :state, null: false, foreign_key: true
 
       t.timestamps
     end
