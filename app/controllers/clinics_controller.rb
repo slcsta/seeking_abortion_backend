@@ -1,6 +1,6 @@
 class ClinicsController < ApplicationController
     def index
-        clincs = Clinic.all
+        clinics = Clinic.all
         render json: clinics 
     end
 end
