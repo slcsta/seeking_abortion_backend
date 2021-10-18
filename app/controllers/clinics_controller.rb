@@ -9,6 +9,7 @@ class ClinicsController < ApplicationController
     end
 
     def create
+        
         clinic = Clinic.new(clinic_params)
         if clinic.save
             render json: ClinicSerializer.new(clinic)
@@ -26,6 +27,6 @@ class ClinicsController < ApplicationController
     private
 
     def clinic_params
-        params.require(:clinic).permit(:name, :address, :city, :zip_code, :phone_number, :state_id)
+        params.require(:clinic).permit(:name, :address, :city, :zip_code, :phone_number, :state_id, :state.name)
     end
 end
